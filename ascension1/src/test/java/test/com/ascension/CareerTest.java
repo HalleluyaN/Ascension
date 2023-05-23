@@ -10,6 +10,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import static org.testng.Assert.*;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
@@ -36,10 +37,13 @@ public class CareerTest {
     @BeforeClass
     public static void setUpClass() throws Exception {
         //        WebDriverManager.getInstance(SafariDriver.class).setup();
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--headless");
+        options.addArguments("--disable-gpu");
+        options.addArguments("--window-size=1400,800");
         WebDriverManager.chromedriver().setup();
 //        driver = new SafariDriver();
-        driver = new ChromeDriver();
-        driver.manage().window().maximize();
+        driver = new ChromeDriver(options);
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
     }
@@ -59,11 +63,11 @@ public class CareerTest {
 
     @Test
     public void testCareers() throws Exception {
-        
+
         System.out.println("");
         System.out.println("🧪 Careers is Being Tested 🧪");
         System.out.println("");
-        
+
         driver.get("https://jobs.ascension.org/careers-home/");
 
         driver.findElement(By.id("keyword-search")).click();
@@ -76,7 +80,7 @@ public class CareerTest {
 
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("window.scrollBy(0,250)", "");
-        
+
         driver.findElement(By.xpath("//a[contains(@class, 'apply-button')]//span[contains(text(), 'Apply Now')]")).click();
 
         System.out.println("");
