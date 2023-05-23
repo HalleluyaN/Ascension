@@ -14,6 +14,7 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.safari.SafariDriver;
 import org.openqa.selenium.safari.SafariOptions;
 import org.testng.Assert;
@@ -37,17 +38,16 @@ public class PriceTransparencyNoInsTest {
 
     @BeforeClass
     public static void setUpClass() throws Exception {
-//        WebDriverManager.getInstance(SafariDriver.class).setup();
-//        System.setProperty("webdriver.safari.driver", "/usr/bin/safaridriver");
-//        SafariOptions options = new SafariOptions();
-//        options.setCapability("locationContextEnabled", true);
-//        driver = new SafariDriver(options);
-
+        //        WebDriverManager.getInstance(SafariDriver.class).setup();
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--headless");
+        options.addArguments("--disable-gpu");
+        options.addArguments("--window-size=1400,800");
         WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver();
-
-        driver.manage().window().maximize();
+//        driver = new SafariDriver();
+        driver = new ChromeDriver(options);
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+
     }
 
     @AfterClass

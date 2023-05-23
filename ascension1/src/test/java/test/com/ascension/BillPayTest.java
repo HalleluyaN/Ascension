@@ -11,6 +11,7 @@ import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.Select;
 import static org.testng.Assert.*;
 import org.testng.annotations.AfterClass;
@@ -32,11 +33,14 @@ public class BillPayTest {
 
     @BeforeClass
     public static void setUpClass() throws Exception {
-//        WebDriverManager.getInstance(SafariDriver.class).setup();
+        //        WebDriverManager.getInstance(SafariDriver.class).setup();
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--headless");
+        options.addArguments("--disable-gpu");
+        options.addArguments("--window-size=1400,800");
         WebDriverManager.chromedriver().setup();
 //        driver = new SafariDriver();
-        driver = new ChromeDriver();
-        driver.manage().window().maximize();
+        driver = new ChromeDriver(options);
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
     }
