@@ -18,9 +18,16 @@
     </test>
     -->
 
-    <test name="test.com.ascension suite">
+    <test name="Test1">
         <classes>
-            <class name="test.com.ascension.CareerTest" />
+            <class name="test.com.ascension.PriceTransparencyInsTest" />
         </classes>
     </test>
+    
+    <test name="Test2">
+        <classes>
+            <class name="test.com.ascension.BillPayTest" />
+        </classes>
+    </test>
+
 </suite>

@@ -1,6 +1,11 @@
 test/com/ascension/pageobject/PriceTransparencyNoInsPO.class
+test/com/ascension/BillPayTest.class
 test/com/ascension/pageobject/FileUtil.class
+test/com/ascension/MakeADonationTest.class
 test/com/ascension/PriceTransparencyInsTest.class
 test/com/ascension/pageobject/PriceTransparencyPOTest.class
+test/com/ascension/FindALocationTest.class
+test/com/ascension/CareerTest.class
+test/com/ascension/SpecialtyCareTest.class
 test/com/ascension/PriceTransparencyNoInsTest.class
 test/com/ascension/pageobject/Input.class
