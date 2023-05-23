@@ -19,9 +19,8 @@
     -->
 
     <test name="test.com.ascension suite">
-        <packages>
-            <package name="test.com.ascension"/>
-        </packages>
+        <classes>
+            <class name="test.com.ascension.CareerTest" />
+        </classes>
     </test>
-
 </suite>

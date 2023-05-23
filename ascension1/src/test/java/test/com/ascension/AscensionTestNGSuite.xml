@@ -1,6 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
-<suite name="com.mycompany_ascension1_jar_1.0-SNAPSHOT">
 
     <!--
     see examples at http://testng.org/doc/documentation-main.html#testng-xml
@@ -17,11 +16,24 @@
         </classes>
     </test>
     -->
-
+<!--
     <test name="test.com.ascension suite">
         <packages>
             <package name="test.com.ascension"/>
         </packages>
     </test>
-
+        -->
+<suite name="Suite1">
+    
+    <test name="Test1">
+        <classes>
+            <class name="test.com.ascension.PriceTransparencyInsTest" />
+        </classes>
+    </test>
+    
+    <test name="Test2">
+        <classes>
+            <class name="test.com.ascension.BillPayTest" />
+        </classes>
+    </test>
 </suite>
