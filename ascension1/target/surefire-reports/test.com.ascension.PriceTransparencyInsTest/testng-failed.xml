@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [test.com.ascension.PriceTransparencyInsTest]" verbose="0">
+  <test name="Command line test(failed)">
+    <classes>
+      <class name="test.com.ascension.PriceTransparencyInsTest">
+        <methods>
+          <include name="setUpMethod"/>
+          <include name="tearDownClass"/>
+          <include name="tearDownMethod"/>
+          <include name="testAscensionHomepage"/>
+          <include name="setUpClass"/>
+        </methods>
+      </class> <!-- test.com.ascension.PriceTransparencyInsTest -->
+    </classes>
+  </test> <!-- Command line test(failed) -->
+</suite> <!-- Failed suite [test.com.ascension.PriceTransparencyInsTest] -->

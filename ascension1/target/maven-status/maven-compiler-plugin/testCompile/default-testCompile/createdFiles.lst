@@ -1,0 +1,6 @@
+test/com/ascension/pageobject/PriceTransparencyNoInsPO.class
+test/com/ascension/pageobject/FileUtil.class
+test/com/ascension/PriceTransparencyInsTest.class
+test/com/ascension/pageobject/PriceTransparencyPOTest.class
+test/com/ascension/PriceTransparencyNoInsTest.class
+test/com/ascension/pageobject/Input.class
