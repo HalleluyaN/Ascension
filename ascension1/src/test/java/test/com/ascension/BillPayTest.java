@@ -66,7 +66,7 @@ public class BillPayTest {
         System.out.println("");
         
         driver.get("https://healthcare.ascension.org/");
-        driver.findElement(By.linkText("Bill Pay")).click();
+        driver.findElement(By.linkText("Bill Pay"));
 
 //        System.out.println("Before switchint title is =" + driver.getTitle());
         driver.findElement(By.linkText("PAY A HOSPITAL BILL - VISITPAY PORTAL")).click();
