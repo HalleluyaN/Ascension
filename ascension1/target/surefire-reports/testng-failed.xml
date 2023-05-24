@@ -1,17 +1,75 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [test.com.ascension.CareerTest]" verbose="0">
+<suite name="Failed suite [Command line suite]" verbose="0">
   <test name="Command line test(failed)">
     <classes>
+      <class name="test.com.ascension.PriceTransparencyInsTest">
+        <methods>
+          <include name="setUpMethod"/>
+          <include name="tearDownClass"/>
+          <include name="tearDownMethod"/>
+          <include name="setUpClass"/>
+        </methods>
+      </class> <!-- test.com.ascension.PriceTransparencyInsTest -->
       <class name="test.com.ascension.CareerTest">
         <methods>
           <include name="setUpClass"/>
           <include name="tearDownMethod"/>
           <include name="setUpMethod"/>
           <include name="tearDownClass"/>
-          <include name="testCareers"/>
         </methods>
       </class> <!-- test.com.ascension.CareerTest -->
+      <class name="test.com.ascension.pageobject.PriceTransparencyPOTest">
+        <methods>
+          <include name="executePriceTransparencyPOModule"/>
+          <include name="setUpMethod"/>
+          <include name="tearDownClass"/>
+          <include name="tearDownMethod"/>
+          <include name="setUpClass"/>
+        </methods>
+      </class> <!-- test.com.ascension.pageobject.PriceTransparencyPOTest -->
+      <class name="test.com.ascension.SpecialtyCareTest">
+        <methods>
+          <include name="setUpClass"/>
+          <include name="setUpMethod"/>
+          <include name="tearDownClass"/>
+          <include name="tearDownMethod"/>
+        </methods>
+      </class> <!-- test.com.ascension.SpecialtyCareTest -->
+      <class name="test.com.ascension.PriceTransparencyNoInsTest">
+        <methods>
+          <include name="setUpClass"/>
+          <include name="setUpMethod"/>
+          <include name="tearDownMethod"/>
+          <include name="tearDownClass"/>
+        </methods>
+      </class> <!-- test.com.ascension.PriceTransparencyNoInsTest -->
+      <class name="test.com.ascension.FindALocationTest">
+        <methods>
+          <include name="setUpClass"/>
+          <include name="testfindaLocation"/>
+          <include name="tearDownMethod"/>
+          <include name="tearDownClass"/>
+          <include name="setUpMethod"/>
+        </methods>
+      </class> <!-- test.com.ascension.FindALocationTest -->
+      <class name="test.com.ascension.MakeADonationTest">
+        <methods>
+          <include name="tearDownMethod"/>
+          <include name="tearDownClass"/>
+          <include name="setUpMethod"/>
+          <include name="setUpClass"/>
+          <include name="OpenBrowser"/>
+        </methods>
+      </class> <!-- test.com.ascension.MakeADonationTest -->
+      <class name="test.com.ascension.BillPayTest">
+        <methods>
+          <include name="tearDownClass"/>
+          <include name="setUpClass"/>
+          <include name="setUpMethod"/>
+          <include name="tearDownMethod"/>
+        </methods>
+      </class> <!-- test.com.ascension.BillPayTest -->
     </classes>
   </test> <!-- Command line test(failed) -->
-</suite> <!-- Failed suite [test.com.ascension.CareerTest] -->
+</suite> <!-- Failed suite [Command line suite] -->
