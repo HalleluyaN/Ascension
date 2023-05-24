@@ -43,6 +43,7 @@ public class FindALocationTest {
         driver = new ChromeDriver(options);
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
+
     }
 
     @AfterClass
@@ -58,33 +59,23 @@ public class FindALocationTest {
     public void tearDownMethod() throws Exception {
     }
 
-    @Test(priority = 1)
+    @Test
     public void testfindaLocation() throws InterruptedException {
-        
+
         System.out.println("");
         System.out.println("🧪 Find A Location is Being Tested 🧪");
         System.out.println("");
-        
-        driver.get("https://healthcare.ascension.org/");
-        driver.findElement(By.xpath("//a[@title='Find a Location']")).click();
 
-        driver.findElement(By.xpath("//input[@class='location-type-ahead-input is-valid']")).click();
-        driver.findElement(By.xpath("//input[@class='location-type-ahead-input is-valid']")).clear();
-        driver.findElement(By.xpath("//input[@class='location-type-ahead-input is-valid']")).sendKeys(Keys.chord(Keys.COMMAND, "a")); // Select all text (for macOS)
-        driver.findElement(By.xpath("//input[@class='location-type-ahead-input is-valid']")).sendKeys(Keys.DELETE); // Delete the selected text
-        driver.findElement(By.xpath("//input[@class='location-type-ahead-input is-valid']")).sendKeys("Carol Stream, IL 60188");
-        driver.findElement(By.xpath("//input[@class='location-type-ahead-input is-valid']")).sendKeys(Keys.ENTER);
-//        driver.findElement(By.xpath("//a[contains(text(),'Physical Therapy')]")).click();
-//Thread.sleep(2000);
-//driver.findElement(By.xpath("//*[@id=\"locationsSearchContainer\"]/div/div[2]/div[1]/div/div/div/div/div[3]/div/input")).click();
+        driver.get("https://healthcare.ascension.org/locations");
+        driver.findElement(By.xpath("//input[@class='location-type-ahead-input is-valid' and @placeholder='City and State, or ZIP Code']")).click();
+        driver.findElement(By.xpath("//input[@class='location-type-ahead-input is-valid' and @placeholder='City and State, or ZIP Code']")).clear();
+        driver.findElement(By.xpath("//input[@class='location-type-ahead-input is-valid' and @placeholder='City and State, or ZIP Code']")).sendKeys(Keys.chord(Keys.COMMAND, "a"));
+        driver.findElement(By.xpath("//input[@class='location-type-ahead-input is-valid' and @placeholder='City and State, or ZIP Code']")).sendKeys(Keys.DELETE);
+        driver.findElement(By.xpath("//input[@class='location-type-ahead-input is-valid' and @placeholder='City and State, or ZIP Code']")).sendKeys("Carol Stream, IL");
+        driver.findElement(By.xpath("//input[@class='location-type-ahead-input is-valid' and @placeholder='City and State, or ZIP Code']")).sendKeys(Keys.ENTER);
+        driver.findElement(By.xpath("//input[@type='submit' and @class='fal-search-button']")).click();
 
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("window.scrollBy(0,1000)");
-//        Thread.sleep(2000);
-//WebElement SubmitButton=(new WebDriverWait(driver,10)).until(ExpectedConditions.presenceOfElementLocated(By.xpath("//a[contains(text(),'Ascension Medical Group Illinois - Heart & Vascula')]")));
-        driver.findElement(By.xpath("//*[@id=\"locationsSearchContainer\"]/div/div[2]/div[2]/div[2]/div[3]/ol/li[4]/div/div/div[2]/h2/a")).click();
-        String title = driver.getTitle();
-        System.out.println(title);
+        driver.findElement(By.linkText("Ascension Medical Group Illinois - Heart & Vascular Care Bartlett")).click();
 
         System.out.println("");
         System.out.println("✅ Find a Location is Tested! ✅");

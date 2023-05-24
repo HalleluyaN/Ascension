@@ -12,7 +12,9 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import static org.testng.Assert.*;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
@@ -83,7 +85,8 @@ public class BillPayTest {
         driver.switchTo().window(childWindowId);
         System.out.println("chid window Title" + driver.getTitle());
 
-        driver.findElement(By.xpath("//a[contains(text(),'Make a one-time payment')]")).click();
+        WebDriverWait wait = new WebDriverWait(driver, 20);  //20 sec
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[contains(text(),'Make a one-time payment')]"))).click();
 
         driver.findElement(By.xpath("//input[@id='AuthenticationId0']")).click();
         driver.findElement(By.id("AuthenticationId0")).sendKeys("test");

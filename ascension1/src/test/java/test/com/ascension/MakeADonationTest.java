@@ -91,6 +91,7 @@ public class MakeADonationTest {
                 break;
             }
         }
+        
         //Wait until element make a gift is visible and then clicking on it
         WebDriverWait wait = new WebDriverWait(driver, 20);  //20 sec
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"comp-l8ep9eh1\"]/a/div/span[1]"))).click();

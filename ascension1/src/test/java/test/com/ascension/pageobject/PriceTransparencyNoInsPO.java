@@ -57,7 +57,6 @@ public class PriceTransparencyNoInsPO {
     public void priceTransparencyNoIns(int zipCode) throws Exception {
         
         driver.get(apphomepageUrl);
-        System.out.println("We're here");
         wait.until(ExpectedConditions.elementToBeClickable(pricetransparencyLink)).click();
         wait.until(ExpectedConditions.elementToBeClickable(priceestimatorButton)).click();
 
