@@ -5,6 +5,7 @@
 package test.com.ascension;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import java.util.ArrayList;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.By;
@@ -43,6 +44,7 @@ public class MakeADonationTest {
         WebDriverManager.chromedriver().setup();
 //        driver = new SafariDriver();
         driver = new ChromeDriver(options);
+//        driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
     }
@@ -66,35 +68,43 @@ public class MakeADonationTest {
         System.out.println("🧪 Make a Donation is Being Tested 🧪");
         System.out.println("");
 
-        //Going to Ascensions Main HomePage
-        driver.get("https://healthcare.ascension.org/");
+//        //Going to Ascensions Main HomePage
+//        driver.get("https://healthcare.ascension.org/");
 
-        //Getting the web handle for homepage
-        String currentTabHandle = driver.getWindowHandle();
+        //Going to Donate Page
+        driver.get("https://healthcare.ascension.org/donate?");
 
-        //Click on Donate
-        driver.findElement(By.xpath("//*[@id=\"header\"]/div/div[1]/div/div/div/div/div/div[1]/div/div/div/div[1]/div/div/div/div/ul/li[2]/div/a")).click();
+//        //Getting the web handle for homepage
+//        String currentTabHandle = driver.getWindowHandle();
+
+//        //Click on Donate
+//        driver.findElement(By.xpath("//*[@id=\"header\"]/div/div[1]/div/div/div/div/div/div[1]/div/div/div/div[1]/div/div/div/div/ul/li[2]/div/a")).click();
 
         //Click on Illinois
         driver.findElement(By.xpath("//*[@id=\"facets-section__state\"]/li[4]/a/div/div/h3")).click();
 
         //Click on Foundation
-        driver.findElement(By.xpath("//*[@id=\"container\"]/div/div[2]/div[2]/div/div/div[2]/div/div/div/div[1]/div/h3/a")).click();
+        driver.findElement(By.xpath("//a[@href=\"https://www.ascensionillinoisfoundation.org/\"]")).click();
 
-        //Geting handles of all tabs - since a new tab was opened, and then swithcing to tne new tab
-        Thread.sleep(3000);
-        Set<String> allTabHandles = driver.getWindowHandles();
-
-        for (String tabHandle : allTabHandles) {
-            if (!tabHandle.equals(currentTabHandle)) {
-                driver.switchTo().window(tabHandle);
-                break;
-            }
-        }
+//        //Geting handles of all tabs - since a new tab was opened, and then swithcing to tne new tab
+//        Thread.sleep(3000);
+//        Set<String> allTabHandles = driver.getWindowHandles();
+//
+//        for (String tabHandle : allTabHandles) {
+//            if (!tabHandle.equals(currentTabHandle)) {
+//                driver.switchTo().window(tabHandle);
+//                break;
+//            }
+//        }
+        //Go to Second Tab
+        ArrayList<String> tabList = new ArrayList<String>(driver.getWindowHandles());
+        driver.switchTo().window(tabList.get(1));
+        
+        System.out.println("We're here");
         
         //Wait until element make a gift is visible and then clicking on it
         WebDriverWait wait = new WebDriverWait(driver, 20);  //20 sec
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"comp-l8ep9eh1\"]/a/div/span[1]"))).click();
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[@class=\"StylableButton2545352419__label wixui-button__label\"]"))).click();
 
         /*
         Switching to the "form" iframe in the donation page

@@ -1,15 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: test.com.ascension.MakeADonationTest
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 64.915 sec <<< FAILURE!
-OpenBrowser(test.com.ascension.MakeADonationTest)  Time elapsed: 63.584 sec  <<< FAILURE!
-org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //*[@id="comp-l8ep9eh1"]/a/div/span[1] (tried for 20 second(s) with 500 milliseconds interval)
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'Halleluyas-MacBook-Pro.local', ip: '2601:246:5900:8270:0:0:0:10f5%en0', os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '13.3.1', java.version: '19.0.2'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 113.0.5672.126, chrome: {chromedriverVersion: 113.0.5672.63 (0e1a4471d5ae..., userDataDir: /var/folders/qd/9k8sr40n2mq...}, goog:chromeOptions: {debuggerAddress: localhost:63651}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 20a1ed15cfadb6059363fe920619a8b3
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
-	at test.com.ascension.MakeADonationTest.OpenBrowser(MakeADonationTest.java:97)
-
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 89.808 sec
