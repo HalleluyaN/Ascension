@@ -72,7 +72,7 @@ public class MakeADonationTest {
 //        driver.get("https://healthcare.ascension.org/");
 
         //Going to Donate Page
-        driver.get("https://healthcare.ascension.org/donate?");
+//        driver.get("https://healthcare.ascension.org/donate?");
 
 //        //Getting the web handle for homepage
 //        String currentTabHandle = driver.getWindowHandle();
